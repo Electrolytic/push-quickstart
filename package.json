@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "name": "push-quickstart",
+  "description": "a quickstart for electron push notifications",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Electrolytic/push-quickstart.git"
+  },
+  "keywords": [
+    "electron",
+    "push",
+    "notification"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Electrolytic/push-quickstart/issues"
+  },
+  "homepage": "https://github.com/Electrolytic/push-quickstart#readme",
+  "dependencies": {
+    "electrolytic": "0.0.3",
+    "electron": "^6.1.12"
+  }
+}
