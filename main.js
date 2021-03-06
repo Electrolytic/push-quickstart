@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require('electron')
 
 const Electrolytic = require('electrolytic')
 
-const ELECTROLYTIC_APP_KEY = 'COnYWtSi5fhcDDtBwKEp'
+const ELECTROLYTIC_APP_KEY = '<YOUR-APP-KEY>'
 
 const electrolytic = Electrolytic({
   appKey: ELECTROLYTIC_APP_KEY,
