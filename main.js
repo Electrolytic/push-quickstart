@@ -2,11 +2,18 @@ const { app, BrowserWindow } = require('electron')
 
 const Electrolytic = require('electrolytic')
 
-const ELECTROLYTIC_APP_KEY = '<Your-API-Key>'
+const ELECTROLYTIC_APP_KEY = 'COnYWtSi5fhcDDtBwKEp'
 
 const electrolytic = Electrolytic({
   appKey: ELECTROLYTIC_APP_KEY,
 })
+
+// Visit https://electrolytic.app/dashboard/analytics after you start app to see Analytics reporting there.
+electrolytic
+  .analytics
+  .enable(true) // disabled by default.
+  .use(app) // to report current version of the app
+  .report() // need to explicitly call it.
 
 electrolytic.on('token', token => { // will be called everytime on app start
   console.log('user token', token);
@@ -18,6 +25,11 @@ electrolytic.on('push', (payload) => { // when you use the API to send a push
   mainWindow.webContents.send('push', payload)
 })
 
+// when you update the config on our dashboard. It's pushed to all the apps in realtime 🙀
+electrolytic.on('config', (config) => {
+  console.log('got new config', config)
+})
+
 let mainWindow
 
 function createWindow () {
@@ -25,7 +37,7 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true // to be able to use ipcRenderer
     }
   })
 
