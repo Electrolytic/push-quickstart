@@ -18,6 +18,8 @@ electrolytic
 electrolytic.on('token', token => { // will be called everytime on app start
   console.log('user token', token);
   mainWindow.webContents.send('token', token)
+
+  console.log('my configs', electrolytic.configs.get()); // get configs on first load
 })
 
 electrolytic.on('push', (payload) => { // when you use the API to send a push
