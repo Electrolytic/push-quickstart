@@ -22,6 +22,6 @@
   "homepage": "https://github.com/Electrolytic/push-quickstart#readme",
   "dependencies": {
     "electrolytic": "^0.1.1",
-    "electron": "^11.3.0"
+    "electron": "^13.6.6"
   }
 }
